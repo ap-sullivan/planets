@@ -36,9 +36,7 @@ body {
     font-size: 1.8rem;
     color: var(--color-grey-black);
     background-color: var(--color-primary-light);
-
-    
-    
+ 
 }
 
 /***** BACK TO TOP BUTTON ******/
@@ -83,6 +81,7 @@ body {
 /******* HEADER AND NAVIGATION  *******/
 
 header {
+    padding-right: 5rem;
     width: 100%;
     height: 8rem;
     background-color: var(--color-white); 
@@ -91,6 +90,7 @@ header {
     align-items: center;
     color: var(--color-grey-black);
     box-shadow: var(--dark-shadow);
+  
 }
 
 .logo {
@@ -103,7 +103,7 @@ header {
 }
 
 .main-nav ul {
-    font-size: 2rem;
+    font-size: 1.8rem;
     list-style: none;
     display: flex;
     align-items: center;
@@ -134,13 +134,34 @@ ul li a:hover {
 
 }
 
+/******* STICKY NAVIGATION  *******/
+
+.sticky .header {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 8rem;
+    width: 100vw;
+    padding-top: 0;
+    padding-bottom: 0;
+    background-color: rgba(255, 255, 255, 0.95);
+    z-index: 100;
+    box-shadow: 0 1.2rem 3.2rem rbga(0,0,0,0.3);
+    animation: moveDown 1s ease-in;
+  }
+  
+  .sticky .section-hero {
+    margin-top: 9.6rem;
+  }
+  
+
 /******* HERO ********/
 
 .hero {
     position: relative;
     max-width: 100%;
-    height: 65vh;
-    background: url(/images/hero_edit.jpg) no-repeat center;
+    height: 70vh;
+    background: url(/space/images/hero_edit.jpg) no-repeat center;
     background-size: cover;
 }
 
@@ -166,7 +187,7 @@ ul li a:hover {
 /* ***** HOME PAGE STYLING ****** */
 
 .cards {
-    padding: 10rem;
+    padding: 15rem 10rem 10rem 10rem;
 }
 
 .card {
@@ -201,6 +222,14 @@ ul li a:hover {
 
 @media(max-width: 60em){
 
+    .logo {
+        margin-left: 5rem;
+    }
+
+    .main-nav ul {
+        gap: 1.6rem;
+    }
+
     .hero {
         height: 55vh;
     }
@@ -213,9 +242,9 @@ ul li a:hover {
     }
     
     .card-image {
-        width: 60%;
+        width: 70%;
     }
-    
+
 }
 
 @media(max-width: 50em){
@@ -228,9 +257,13 @@ ul li a:hover {
         font-size: 60%;
 
     }
+
+    .card-text {
+        font-size: 1.6rem;
+    }
     
     .card-image {
-        width: 75%;
+        width: 100%;
     }
     
 }
@@ -307,19 +340,7 @@ ul li a:hover {
       display: none; 
     }
 
-    @keyframes moveInRight {
-        0% {
-          opacity: 0;
-          transform: translateX(10rem);
-        }
-        80% {
-          transform: translateX(1rem);
-        }
-        100% {
-          opacity: 1;
-          transform: translateX(0);
-        }
-      }
+   
     
     /****** 960px query *****/
     
@@ -371,7 +392,8 @@ ul li a:hover {
     }
     
     .main-nav-list{
-        padding: 10rem;
+       
+        padding-top: 10rem;
         flex-direction: column;
         gap: 4.8rem;    
     }
@@ -435,8 +457,40 @@ ul li a:hover {
 
     }
 
-   
+}
 
+/* ******* ALIENS PAGE ****** */
+
+.aliens-heading {
+    font-size: 4.8rem;
+    text-transform: uppercase;
+    letter-spacing: 1.2px;
+    margin-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.alien-container {
+    display: flex;
+    padding: 8rem 10rem;
+}
+
+.alien-title {
+    margin-bottom: 3rem;
+}
+
+.alien-description {
+    padding-left: 5rem;
+}
+
+.alien-image {
+    width: 50%;
+}
+
+.alien-image-1 {
+    max-width: 35%;
 }
 
 
@@ -462,3 +516,36 @@ footer ul {
 footer ul:hover {
     cursor: pointer;
 }
+
+
+/* ******* ANIMATIONS ****** */
+
+
+@keyframes moveDown {
+    0% {
+      opacity: 0;
+      transform: translateY(-10rem);
+    }
+
+    80% {
+      transform: translateY(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes moveInRight {
+    0% {
+      opacity: 0;
+      transform: translateX(10rem);
+    }
+    80% {
+      transform: translateX(1rem);
+    }
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
